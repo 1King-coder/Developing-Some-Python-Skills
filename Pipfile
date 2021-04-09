@@ -1,0 +1,18 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pyqt5 = "*"
+pymysql = "*"
+selenium = "*"
+beautifulsoup4 = "*"
+requests = "*"
+pydub = "*"
+openpyxl = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"
