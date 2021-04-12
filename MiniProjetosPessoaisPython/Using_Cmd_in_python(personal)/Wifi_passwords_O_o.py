@@ -20,11 +20,15 @@ class StrReprMixin:
 
 class Cmd(StrReprMixin):
     def __init__(self):
-        # Shows easy-to-view IPv4.
+        """
+        Shows easy-to-view IPv4.
+        """
         self.ip = f'\n\033[1;35mIPv4:\033[1;37m{self._get_ip()}\033[m\n'
 
-        # Get the wi-fi's SSID and Password in a list
-        # Recomend using for to the easy-to-view format.
+        """
+        Get the wi-fi's SSID and Password in a list
+        Recomend using for to the easy-to-view format.
+        """
         self.wifis_data = self._get_wifi_data()
 
     @staticmethod
