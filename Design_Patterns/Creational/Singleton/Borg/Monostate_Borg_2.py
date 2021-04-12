@@ -16,23 +16,33 @@ class A(StrReprMixin):
         self.nome = nome
 
 
-class MonoStateSimple(StrReprMixin):
+class MonoState(StrReprMixin):
     _state: dict = {
         'x': 200,
         'y': 900,
         'nome': 'Vitor'
     }
 
-    def __init__(self, nome=None):
-        self.__dict__ = self._state
+    def __new__(cls, *args, **kwargs):
+        obj = super().__new__(cls)
+        obj.__dict__ = cls._state
+        return obj
 
+    def __init__(self, nome=None):
         if nome is not None:
             self.nome = nome
 
 
+class B(MonoState):
+    pass
+
+
 if __name__ == '__main__':
-    m1 = MonoStateSimple('Vitor')
+    m1 = MonoState('Vitor')
     print(m1)
 
-    m2 = MonoStateSimple()
+    m2 = MonoState()
     print(m1)
+
+    b = B()
+    print(b)
