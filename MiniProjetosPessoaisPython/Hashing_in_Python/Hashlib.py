@@ -1,6 +1,10 @@
 import hashlib
 
 try:
+    """
+    open Passwords text archieve and set readlines copy
+    that returns a iterator to a array.
+    """
     passes = open('MiniProjetosPessoaisPython/' +
                   'Hashing_in_Python/Passwords.txt', 'r')
     passwords = passes.readlines().copy()
@@ -9,6 +13,10 @@ except Exception:
     quit()
 
 try:
+    """
+    Open the archieve where the hashes will
+    be stored.
+    """
     hashes = open('MiniProjetosPessoaisPython/' +
                   'Hashing_in_Python/Hashes.txt', 'w+')
 except Exception:
@@ -16,16 +24,29 @@ except Exception:
     quit()
 
 for password in passwords:
+    """
+    iterate into the passwords in the archieve,
+    turn them to sha256 and write the hash into
+    the hash's archieves.
+    """
     hashes.writelines(hashlib.sha256(
         password.strip().encode('utf-8')).hexdigest()+'\n')
 
 
-hashes.close()
+hashes.close()  # Close the archieve for writing.
+
+"""
+ Opens the hashe's archieve for reading.
+"""
 hashes2 = open('MiniProjetosPessoaisPython/' +
                'Hashing_in_Python/Hashes.txt', 'r')
-hashes_to_compare = hashes2.readlines().copy()
+
+hashes_to_compare = hashes2.readlines().copy()  # Sets readlines to array.
 
 for i in range(len(hashes_to_compare)):
+    """
+    Compares the hashes and password's hashes.
+    """
     print(hashes_to_compare[i] == hashlib.sha256(
         passwords[i].strip().encode('utf-8')).hexdigest()+'\n')
 
