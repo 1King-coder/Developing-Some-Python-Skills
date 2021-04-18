@@ -6,7 +6,7 @@ import re
 import openpyxl
 
 
-DATA_FILE = r"C:\Programação\PyhtonVSC\CursoPython\projetinhosPython\WebScrapping\Dados\comparaPrecos.xlsx"
+DATA_FILE = "C:/Programação/VSCode/CursoPython/projetinhosPython/WebScrapping/Dados/comparaPrecos.xlsx"
 
 
 class SalvaEComparaPreco:
