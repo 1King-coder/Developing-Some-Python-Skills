@@ -27,7 +27,7 @@ class Cmd(StrReprMixin):
 
         """
         Get the wi-fi's SSID and Password in a list
-        Recomend using for to the easy-to-view format.
+        Recomend using FOR to the easy-to-view format.
         """
         self.wifis_data = self._get_wifi_data()
 
@@ -102,4 +102,5 @@ class Cmd(StrReprMixin):
 
 if __name__ == '__main__':
     cmd = Cmd()
-    print(cmd)
+    for _ in cmd.wifis_data:
+        print(_)
