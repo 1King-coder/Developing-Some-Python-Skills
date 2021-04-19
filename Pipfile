@@ -11,6 +11,7 @@ beautifulsoup4 = "*"
 requests = "*"
 pydub = "*"
 openpyxl = "*"
+pandas = "*"
 
 [dev-packages]
 
