@@ -1,10 +1,17 @@
+import requests
+from bs4 import BeautifulSoup as BS
 import pandas as pd
 
-a = pd.read_excel(
-    './MiniProjetosPessoaisPython/Pandas/Gastos e ganhos ano.xlsx',
-    sheet_name='Abril')
+
+def response(link):
+    return requests.get(link)
 
 
-INPMB = a['Maior Gasto'][0]
+def bs(response):
+    return BS(response.text, 'html.parser')
 
-print(a['Custo'])
+
+response = response('https://github.com/KaweMaximo')
+bs_r = bs(response)
+
+print(bs_r.find_all(class_='text-bold color-text-primary')[0].text)
