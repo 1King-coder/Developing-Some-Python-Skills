@@ -105,7 +105,7 @@ if __name__ == '__main__':
     user1 = user_director.with_age('Heinsenberg', 'Wern', 18)
     user2 = user_director.with_address('Albert', 'Einstein', 'Rua Povloska 22')
     user3 = user_director.with_phone(
-        'Insetizam', 'Inesquecível', '2569-6969')
+        'Insetisan', 'Inesquecível', '2569-6969')
 
     print(user1)
     print(user2)
