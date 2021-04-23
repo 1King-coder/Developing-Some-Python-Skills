@@ -1,10 +1,22 @@
+import time
+
+start = time.perf_counter()
 
 
 def fibonacci(u):
     f = [0, 1]
     for i in range(u):
-        f.append(f[i] + f[i+1])
+        f.append(plus(f[i], f[i+1]))
     return f
 
 
-print(fibonacci(100))
+def plus(n1, n2):
+    return n1 + n2
+
+
+print(fibonacci(100000)[99999])
+
+finish = time.perf_counter()
+
+
+print(f'process time: {finish-start}')
