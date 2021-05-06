@@ -1,31 +1,32 @@
 class Prime_Numbers:
 
     @staticmethod
-    def is_prime(number_sent: int) -> bool:
+    def is_prime(sent_number: int) -> bool:
         """
         Verify if the received number is prime.
         """
 
         divisors = 0
-        for i in range(1, number_sent-1):
-            if number_sent % i == 0:
+        for i in range(1, sent_number-1):
+            if sent_number % i == 0:
                 divisors += 1
 
         return divisors < 2
 
-    def prime_numbers(self, number_sent: int) -> list:
+    def prime_numbers(self, sent_number: int) -> list:
         """
-        Return all the prime numbers in the range sent .
+        Return all the prime numbers in the sent range.
         """
+
         prime_numbers: list = []
-        for num in range(2, number_sent):
+        for num in range(2, sent_number):
             if self.is_prime(num):
                 prime_numbers.append(num)
 
         return prime_numbers
 
 
-class MMC:
+class LCM:
     def __init__(self, numbers: list):
         self.numbers: list = numbers
         self.prime_numbers = Prime_Numbers()
@@ -36,16 +37,17 @@ class MMC:
         Returns the least multiple numbers (prime numbers) and it's respective
         exponent in a dict form.
         """
+
         _results: dict = {}
 
-        for number_sent in self.numbers:
-            if Prime_Numbers.is_prime(number_sent):
-                _results[number_sent] = 1
+        for sent_number in self.numbers:
+            if Prime_Numbers.is_prime(sent_number):
+                _results[sent_number] = 1
 
-            for prime_number in self.prime_numbers.prime_numbers(number_sent):
-                if number_sent % prime_number == 0:
+            for prime_number in self.prime_numbers.prime_numbers(sent_number):
+                if sent_number % prime_number == 0:
                     _results[prime_number] = self._multiple_exponent(
-                        number_sent,
+                        sent_number,
                         prime_number
                     )
 
@@ -65,25 +67,23 @@ class MMC:
         return _total
 
     @staticmethod
-    def _multiple_exponent(number_sent: int, prime_number: int,
+    def _multiple_exponent(sent_number: int, prime_number: int,
                            results_number: int = 0) -> int:
         """
         Calculate the how many times can the prime number divide
-        the number sent.
+        the sent number.
         """
 
-        while number_sent // prime_number != 0:
+        while sent_number // prime_number != 0:
             results_number += 1
-            number_sent = number_sent // prime_number
+            sent_number //= prime_number
 
         return results_number
 
 
 if __name__ == "__main__":
-    mmc_nums = MMC([125, 17, 256, 625])
+    mmc_nums = LCM([8, 64, 72])
 
-    print()
-    print(mmc_nums.values_dict)
-    print()
-    print(mmc_nums.value)
-    print()
+    print('\n', mmc_nums.values_dict, '\n')
+
+    print('\n', mmc_nums.value, '\n')
