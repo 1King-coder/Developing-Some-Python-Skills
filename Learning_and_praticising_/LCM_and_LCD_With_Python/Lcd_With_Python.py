@@ -9,6 +9,10 @@ class LCD:
     @property
     def values_dict(self) -> dict:
         _results: dict = {}
+        """
+        Returns the number that divides both numbers at
+        the same time and how many times it does.
+        """
 
         for prime_number in self.prime_numbers.prime_numbers(
                 self.larger(self.numbers)):
