@@ -1,4 +1,0 @@
-Class random_func initialized at 2021-05-11 15:28:40.841230 
-Function random_func was called at 2021-05-11 15:28:40.841230 
-Class SomeClass initialized at 2021-05-11 15:28:40.841230 
-Function SomeClass was called at 2021-05-11 15:28:40.841230 

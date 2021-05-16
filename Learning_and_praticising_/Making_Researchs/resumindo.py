@@ -52,7 +52,7 @@ def write(titles=[], texts=''):
 
 
 if __name__ == '__main__':
-    superman_research = Research('superman')
+    superman_research = Research('hitler')
 
     texts = superman_research.texts
     titles = superman_research.titles

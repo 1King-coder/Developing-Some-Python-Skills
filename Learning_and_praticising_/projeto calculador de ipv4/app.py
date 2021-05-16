@@ -1,6 +1,6 @@
 from Calculador_de_IPV4 import CalculadorIPV4
 
-calc_ipv4 = CalculadorIPV4('192.168.0.1', mask='255.255.255.0')
+calc_ipv4 = CalculadorIPV4('127.0.0.1', mask='255.0.0.0')
 
 print(f'\033[1;33mIP: \033[1;34m{calc_ipv4.ip}\033[m')
 print(f'\033[1;33mMáscara: \033[1;34m{calc_ipv4.mask}\033[m')

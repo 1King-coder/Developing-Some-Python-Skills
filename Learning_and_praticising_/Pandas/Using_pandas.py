@@ -11,7 +11,7 @@ def bs(response):
     return BS(response.text, 'html.parser')
 
 
-response = response('https://github.com/KaweMaximo')
+response = response('https://github.com/1King-coder')
 bs_r = bs(response)
 
 print(bs_r.find_all(class_='text-bold color-text-primary')[0].text)
