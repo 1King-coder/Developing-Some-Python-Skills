@@ -5,8 +5,7 @@ try:
     open Passwords text archieve and set readlines copy
     that returns a iterator to a array.
     """
-    passes = open('MiniProjetosPessoaisPython/' +
-                  'Hashing_in_Python/Passwords.txt', 'r')
+    passes = open('Passwords.txt', 'r')
     passwords = passes.readlines().copy()
 except Exception:
     print("Unnable to open 'Passwords.txt'")
@@ -17,8 +16,7 @@ try:
     Open the archieve where the hashes will
     be stored.
     """
-    hashes = open('MiniProjetosPessoaisPython/' +
-                  'Hashing_in_Python/Hashes.txt', 'w+')
+    hashes = open('Hashes.txt', 'w+')
 except Exception:
     print("Unnable to open 'Hashes.txt'")
     quit()
@@ -38,8 +36,7 @@ hashes.close()  # Close the archieve for writing.
 """
  Opens the hashe's archieve for reading.
 """
-hashes2 = open('MiniProjetosPessoaisPython/' +
-               'Hashing_in_Python/Hashes.txt', 'r')
+hashes2 = open('Hashes.txt', 'r')
 
 hashes_to_compare = hashes2.readlines().copy()  # Sets readlines to array.
 

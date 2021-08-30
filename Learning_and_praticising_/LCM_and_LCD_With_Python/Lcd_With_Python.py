@@ -71,4 +71,4 @@ class LCD:
         return results_number
 
 
-print(LCD(8, 64).value)
+print(LCD(8, 64).values_dict)
