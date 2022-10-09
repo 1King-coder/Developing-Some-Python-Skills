@@ -1,4 +1,7 @@
 import time
+from threading import *
+
+
 
 start = time.perf_counter()
 
@@ -14,7 +17,9 @@ def plus(n1, n2):
     return n1 + n2
 
 
-print(fibonacci(100000)[99999])
+n = 16
+
+print(fibonacci(n)[n-1])
 
 finish = time.perf_counter()
 
